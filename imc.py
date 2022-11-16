@@ -6,33 +6,33 @@ colorico = "#f000"
 
 def umbral(genero, imc):
     if genero == "Hombre":
-        if imc < 20:
-            return "Desnutricion", "red"
-        elif 20 < imc < 24.9:
+        if imc <= 20:
+            return "Desnutricion", "yellow"
+        elif 20 < imc <= 24.9:
             return "Un peso normal (Normalidad)", "green"
-        elif 24.9 < imc < 29.9:
-            return "Sobrepeso", "red"
-        elif 29.9 < imc < 40:
+        elif 24.9 < imc <= 29.9:
+            return "Sobrepeso", "yellow"
+        elif 29.9 < imc <= 40:
             return "Obesidad", "red"
         elif imc > 40:
             return "Obesidad grave", "red"
         else:
-            return "Fuera de rango"
+            return "Fuera de rango", "default"
     elif genero == "Mujer":
-        if imc < 19:
-            return "Desnutricion", "red"
-        elif 19 < imc < 23:
+        if imc <= 19:
+            return "Desnutricion", "yellow"
+        elif 19 < imc <= 23:
             return "Un peso normal (Normalidad)", "green"
-        elif 24 < imc < 27:
-            return "Sobrepeso", "red"
+        elif 23 < imc <= 27:
+            return "Sobrepeso", "yellow"
         elif 27 < imc < 32:
             return "Obesidad", "red"
-        elif imc > 32:
+        elif imc >= 32:
             return "Obesidad grave", "red"
         else:
-            return "Fuera de rango"
+            return "Fuera de rango", "red"
     else:
-        return "Genero no definido"
+        return "Genero no definido", "default"
 
 def calcIMC():
     peso = float(caja_peso.get().replace(",","."))
