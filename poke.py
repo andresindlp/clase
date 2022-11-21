@@ -15,5 +15,7 @@ print(data["pokemon"])
 
 ##########################
 for i in data["pokemon"]:
-    print(i["name"])
+    id, name = i["id"], i["name"]
+    print(str(id) + ": " + str(name))
+
 ##########################
