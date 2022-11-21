@@ -16,6 +16,11 @@ print(data["pokemon"])
 ##########################
 for i in data["pokemon"]:
     id, name = i["id"], i["name"]
-    print(str(id) + ": " + str(name))
+    
+    try:
+        candy = i["candy_count"]
+    except:
+        candy = 0
 
+    print(str(id) + ": " + str(name) + ". Necesita " + str(candy) + " caramelos para evolucionar")
 ##########################
