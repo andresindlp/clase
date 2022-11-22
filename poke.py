@@ -15,12 +15,14 @@ print(data["pokemon"])
 
 ##########################
 for i in data["pokemon"]:
-    id, name = i["id"], i["name"]
+    id, name, type = i["id"], i["name"], i["type"]
+    tipos = ", ".join(type)
+    
     
     try:
         candy = i["candy_count"]
     except:
         candy = 0
 
-    print(str(id) + ": " + str(name) + ". Necesita " + str(candy) + " caramelos para evolucionar")
+    print(str(id) + ": " + str(name) + ". Necesita " + str(candy) + " caramelos para evolucionar. " + "Tiene los siguentes tipos: " + str(tipos))
 ##########################
