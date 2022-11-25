@@ -2,9 +2,10 @@ global panta, pisos_validos, personas, avisos, entrada, ultimo_piso
 planta = 0
 pisos_validos = []
 personas = 0
-avisos = "AVISOS\n"
+avisos = ["AVISOS"]
 entrada = input("Abriendo puertas. Pueden pasar ... ").split(" ")
-ultimo_piso = ""
+pisos_invalidos = []
+
 
 
 # pisos = 20
@@ -23,9 +24,9 @@ while personas <= 6:
         else:
             break
 else:
-    avisos += "El usuario que quiere ir al piso " + ultimo_piso + " ya no cabe\n"
+    avisos.append("El usuario que quiere ir al piso " + ultimo_piso + " ya no cabe")
 
-print(avisos)
+print("\n".join(avisos))
         
     
 
